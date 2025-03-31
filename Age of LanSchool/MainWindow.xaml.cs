@@ -37,9 +37,23 @@ namespace Age_of_LanSchool
         }
         private void Jeu(object? sender, EventArgs e)
         {
+            Ennemi ennemi = new Ennemi(50, new System.Drawing.Point(877, 721));
+
+
+
+            Rectangle visuelEnnemi = new Rectangle
+            {
+                Width = 40,
+                Height = 40,
+                Fill = Brushes.Red,
+                Tag = ennemi // pour lier l'objet logique au visuel
+            };
+            Canvas.SetLeft(visuelEnnemi, ennemi.Position.X);
+            Canvas.SetTop(visuelEnnemi, ennemi.Position.Y);
+            Jeu.Children.Add(visuelEnnemi);
+
             Deplacement(player);
         }
-            Ennemi ennemi = new Ennemi(50, new System.Drawing.Point(877, 721));
             
 
         private void Deplacement(Rectangle player)

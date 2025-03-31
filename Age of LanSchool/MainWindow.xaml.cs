@@ -36,6 +36,8 @@ namespace Age_of_LanSchool
         }
         private void Jeu(object? sender, EventArgs e)
         {
+            Ennemi ennemi = new Ennemi(50, new System.Drawing.Point(877, 721));
+            
 
         }
     }

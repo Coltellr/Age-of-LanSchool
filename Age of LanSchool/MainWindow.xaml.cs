@@ -19,6 +19,7 @@ namespace Age_of_LanSchool
 
     {
         public DispatcherTimer minuterie;
+        public bool inRange = false;
         public int ptVieBaseMe = 100, ptVieBaseEn = 100;
         public MainWindow()
         {
@@ -36,9 +37,14 @@ namespace Age_of_LanSchool
         }
         private void Jeu(object? sender, EventArgs e)
         {
+            Deplacement(player);
+        }
             Ennemi ennemi = new Ennemi(50, new System.Drawing.Point(877, 721));
             
 
+        private void Deplacement(Rectangle player)
+        {
+            Canvas.SetLeft(player, Canvas.GetLeft(player) + 2);
         }
     }
 

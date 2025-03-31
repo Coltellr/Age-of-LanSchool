@@ -20,6 +20,7 @@ namespace Age_of_LanSchool
     {
         public DispatcherTimer minuterie;
         public bool inRange = false;
+        public int ptVieBaseMe = 100, ptVieBaseEn = 100;
         public MainWindow()
         {
             InitializeComponent();

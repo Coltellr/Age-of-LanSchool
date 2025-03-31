@@ -23,7 +23,6 @@ namespace Age_of_LanSchool
             this.Position = position;
             this.Degat = degat; 
             this.texture = new Rectangle();
-            this.texture.Fil
         }
 
         public Point Position
@@ -89,7 +88,7 @@ namespace Age_of_LanSchool
         
         public void Deplacement()
         {
-            Canvas.SetLeft(this, Canvas.GetLeft(player) + 6);
+            //Canvas.SetLeft(this, Canvas.GetLeft(this) + 6);
         }
 
     }

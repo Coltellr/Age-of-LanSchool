@@ -39,7 +39,7 @@ namespace Age_of_LanSchool
         }
         private void Jeu(object? sender, EventArgs e)
         {
-            Ennemi ennemi = new Ennemi(50, new System.Drawing.Point(877, 721));
+            Ennemi ennemi = new Ennemi(50, new System.Drawing.Point(877, 721),25);
 
 
 
@@ -52,10 +52,10 @@ namespace Age_of_LanSchool
             };
             Canvas.SetLeft(visuelEnnemi, ennemi.Position.X);
             Canvas.SetTop(visuelEnnemi, ennemi.Position.Y);
-            Jeu.Children.Add(visuelEnnemi);
+            canvasMainWindow.Children.Add(visuelEnnemi);
 
             Deplacement(player);
-        }
+        
             Range(player);
             if (!inRange)
             {
@@ -67,7 +67,7 @@ namespace Age_of_LanSchool
             }
             
         }
-            Ennemi ennemi = new Ennemi(50, new System.Drawing.Point(877, 721));
+            
             
 
         private void Deplacement(Rectangle player)

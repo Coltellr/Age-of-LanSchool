@@ -8,11 +8,13 @@
         Title="Jeu" Height="900" Width="1500">
     <Canvas>
         <Rectangle x:Name="sol" Height="80" Fill="Green" Canvas.Top="804" Width="1500" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        
+
         <Rectangle x:Name="baseMe" Height="166" Fill="Blue" Canvas.Top="638" Width="106" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <Rectangle x:Name="baseEn" Height="166" Fill="Red" Canvas.Top="638" Width="106" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="1394"/>
-        
+
         <Rectangle x:Name="player" Height="83" Canvas.Left="177" Fill="Black" Canvas.Top="721" Width="54"/>
+        <ProgressBar Height="345" Canvas.Left="10" Canvas.Top="263" Width="43"/>
+        <ProgressBar Height="345" Canvas.Left="1447" Canvas.Top="263" Width="43" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
     </Canvas>
 </Window>

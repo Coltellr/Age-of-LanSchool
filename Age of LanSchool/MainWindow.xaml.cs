@@ -19,6 +19,7 @@ namespace Age_of_LanSchool
 
     {
         public DispatcherTimer minuterie;
+        public bool inRange = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -35,7 +36,12 @@ namespace Age_of_LanSchool
         }
         private void Jeu(object? sender, EventArgs e)
         {
+            Deplacement(player);
+        }
 
+        private void Deplacement(Rectangle player)
+        {
+            Canvas.SetLeft(player, Canvas.GetLeft(player) + 2);
         }
     }
 

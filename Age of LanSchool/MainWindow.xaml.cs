@@ -50,6 +50,8 @@ namespace Age_of_LanSchool
             }
             
         }
+            Ennemi ennemi = new Ennemi(50, new System.Drawing.Point(877, 721));
+            
 
         private void Deplacement(Rectangle player)
         {

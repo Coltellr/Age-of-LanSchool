@@ -13,6 +13,7 @@
         <Rectangle x:Name="baseEn" Height="166" Fill="Red" Canvas.Top="638" Width="106" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="1394"/>
 
         <Rectangle x:Name="player" Height="83" Canvas.Left="177" Fill="Black" Canvas.Top="721" Width="54"/>
+        <Rectangle x:Name="Player2" Height="83" Canvas.Left="981" Fill="Black" Canvas.Top="721" Width="54" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <ProgressBar Height="345" Canvas.Left="10" Canvas.Top="263" Width="43"/>
         <ProgressBar Height="345" Canvas.Left="1447" Canvas.Top="263" Width="43" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 

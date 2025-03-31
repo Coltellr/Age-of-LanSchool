@@ -14,8 +14,9 @@
 
         <Rectangle x:Name="player" Height="83" Canvas.Left="177" Fill="Black" Canvas.Top="721" Width="54"/>
         <Rectangle x:Name="Player2" Height="83" Canvas.Left="981" Fill="Black" Canvas.Top="721" Width="54" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <ProgressBar Height="345" Canvas.Left="10" Canvas.Top="263" Width="43"/>
-        <ProgressBar Height="345" Canvas.Left="1447" Canvas.Top="263" Width="43" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        
+        <ProgressBar x:Name="vieMe" Height="345" Canvas.Left="10" Canvas.Top="263" Width="43"/>
+        <ProgressBar x:Name="vieEn" Height="345" Canvas.Left="1447" Canvas.Top="263" Width="43" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
     </Canvas>
 </Window>

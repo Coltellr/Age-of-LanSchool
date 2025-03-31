@@ -8,5 +8,5 @@
         Title="Jeu" Height="1080" Width="1920">
     <Grid>
 
-    </Grid>
+    </Canvas>
 </Window>

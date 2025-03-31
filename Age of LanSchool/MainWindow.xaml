@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Age_of_LanSchool"
         mc:Ignorable="d"
         Title="Jeu" Height="900" Width="1500">
-    <Canvas>
+    <Canvas x:Name="canvasMainWindow">
         <Rectangle x:Name="sol" Height="80" Fill="Green" Canvas.Top="804" Width="1500" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
         <Rectangle x:Name="baseMe" Height="166" Fill="Blue" Canvas.Top="638" Width="106" HorizontalAlignment="Center" VerticalAlignment="Top"/>

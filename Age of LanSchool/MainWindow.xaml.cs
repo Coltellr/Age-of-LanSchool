@@ -20,7 +20,9 @@ namespace Age_of_LanSchool
     {
         public DispatcherTimer minuterie;
         public bool inRange = false;
+        public int range = 150;
         public int ptVieBaseMe = 100, ptVieBaseEn = 100;
+        System.Drawing.Rectangle hitbox2;
         public MainWindow()
         {
             InitializeComponent();
@@ -54,11 +56,35 @@ namespace Age_of_LanSchool
 
             Deplacement(player);
         }
+            Range(player);
+            if (!inRange)
+            {
+                Deplacement(player);
+            }
+            else
+            {
+                Attaque(player);
+            }
+            
+        }
+            Ennemi ennemi = new Ennemi(50, new System.Drawing.Point(877, 721));
             
 
         private void Deplacement(Rectangle player)
         {
-            Canvas.SetLeft(player, Canvas.GetLeft(player) + 2);
+            Canvas.SetLeft(player, Canvas.GetLeft(player) + 6);
+        }
+        
+        private void Range(Rectangle player)
+        {
+            System.Drawing.Rectangle hitbox = new System.Drawing.Rectangle( (int)(Canvas.GetLeft(player) + player.Width), (int)Canvas.GetTop(player) , range, 5);
+            hitbox2 = new System.Drawing.Rectangle( (int)Canvas.GetLeft(Player2), (int)Canvas.GetTop(Player2) , (int)Player2.Width, (int)Player2.Height);
+            inRange = hitbox.IntersectsWith(hitbox2);
+        }
+
+        private void Attaque(Rectangle player)
+        {
+            canvasMainWindow.Children.Remove(Player2);
         }
     }
 

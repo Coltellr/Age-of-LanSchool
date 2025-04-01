@@ -19,6 +19,7 @@
         <ProgressBar x:Name="vieEn" Height="345" Canvas.Left="1447" Canvas.Top="263" Width="43" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FF65FF00" Maximum="100" Minimum="0" Value="100" />
         <Rectangle x:Name="tourelle" Height="30" Canvas.Left="32" Fill="Black" Canvas.Top="660" Width="104" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Rectangle x:Name="Player2Ilyes" Height="83" Canvas.Left="877" Fill="Red" Canvas.Top="721" Width="54" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Button Content="Button" Height="69" Canvas.Left="53" Canvas.Top="35" Width="151" Click="Button_Click"/>
 
     </Canvas>
 </Window>

@@ -31,11 +31,11 @@ namespace Age_of_LanSchool
         {
             foreach (var ennemi in Ennemis)
             {
-                if (EstDansPortee(ennemi.Position))
+                /*if (EstDansPortee(ennemi.Position))
                 {
                     ennemi.RecevoirDegats(Degats);
                     break; // Ne tire que sur un ennemi à la fois
-                }
+                }*/
             }
         }
 

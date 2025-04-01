@@ -1,41 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace Age_of_LanSchool
 {
     public class Ennemi
     {
-        private Point position;
+
         private int vie;
         private int degat;
         private bool peutAttaquer;
         private Rectangle texture;
 
-        public Ennemi(int vie, Point position, int degat)
+        public Ennemi(int vie,double x, double y , int degat)
         {
             this.Vie = vie;
-            this.Position = position;
             this.Degat = degat; 
-            this.texture = new Rectangle();
-        }
+            this.Texture = new Rectangle();
+            this.Texture.Width = 50;
+            this.Texture.Height = 80;
+            this.Texture.Fill = Brushes.Black;
+            MainWindow.MainCanvas.Children.Add(this.Texture);
+            // Positionne le rectangle sur le Canvas
+            Canvas.SetLeft(this.Texture, x);
+            Canvas.SetTop(this.Texture, y);
 
-        public Point Position
-        {
-            get
-            {
-                return position;
-            }
-
-            set
-            {
-                position = value;
-            }
         }
 
         public int Vie
@@ -77,6 +72,20 @@ namespace Age_of_LanSchool
             }
         }
 
+        public Rectangle Texture
+        {
+            get
+            {
+                return this.texture;
+            }
+
+            set
+            {
+                this.texture = value;
+            }
+        }
+
+
         public void RecevoirDegats(int montant)
         {
             Vie -= montant;
@@ -88,7 +97,7 @@ namespace Age_of_LanSchool
         
         public void Deplacement()
         {
-            //Canvas.SetLeft(this, Canvas.GetLeft(this) + 6);
+            Canvas.SetLeft(this.Texture, Canvas.GetLeft(this.Texture) + 6);
         }
 
     }

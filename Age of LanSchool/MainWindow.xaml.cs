@@ -18,20 +18,24 @@ namespace Age_of_LanSchool
     public partial class MainWindow : Window
 
     {
+        public static Canvas MainCanvas { get; private set; }
         public DispatcherTimer minuterie;
         public bool inRange = false;
         public int range = 150;
         public int ptVieBaseMe = 100, ptVieBaseEn = 100;
+        public int delaiSpawn = 0;
+        public List<Ennemi> ennemis = new List<Ennemi>();
+        public bool peutSpawn = false;
         System.Drawing.Rectangle hitbox2;
         public MainWindow()
         {
             InitializeComponent();
             InitTimer();
+            MainCanvas = canvasMainWindow;
         }
 
         private void InitTimer()
         {
-            //timer pour faire fonctionner le jeu à 60 fps
             minuterie = new DispatcherTimer();
             minuterie.Interval = TimeSpan.FromMilliseconds(17);
             minuterie.Tick += Jeu;
@@ -39,23 +43,14 @@ namespace Age_of_LanSchool
         }
         private void Jeu(object? sender, EventArgs e)
         {
-            Ennemi ennemi = new Ennemi(50, new System.Drawing.Point(877, 721),25);
+            
 
-
-
-            Rectangle visuelEnnemi = new Rectangle
-            {
-                Width = 40,
-                Height = 40,
-                Fill = Brushes.Red,
-                Tag = ennemi // pour lier l'objet logique au visuel
-            };
-            Canvas.SetLeft(visuelEnnemi, ennemi.Position.X);
-            Canvas.SetTop(visuelEnnemi, ennemi.Position.Y);
-            canvasMainWindow.Children.Add(visuelEnnemi);
-
+            
+            //Canvas.SetLeft(visuelEnnemi, ennemi.X);
+            //Canvas.SetTop(visuelEnnemi, ennemi.Y);
+            //canvasMainWindow.Children.Add(visuelEnnemi);
             Deplacement(player);
-        
+            Delai();
             Range(player);
             if (!inRange)
             {
@@ -63,7 +58,7 @@ namespace Age_of_LanSchool
             }
             else
             {
-                Attaque(player);
+                //Attaque(player);
             }
             
         }
@@ -72,7 +67,10 @@ namespace Age_of_LanSchool
 
         private void Deplacement(Rectangle player)
         {
-            Canvas.SetLeft(player, Canvas.GetLeft(player) + 6);
+            foreach (Ennemi ennemi in ennemis)
+            {
+                ennemi.Deplacement();
+            }
         }
         
         private void Range(Rectangle player)
@@ -82,10 +80,27 @@ namespace Age_of_LanSchool
             inRange = hitbox.IntersectsWith(hitbox2);
         }
 
-        private void Attaque(Rectangle player)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            canvasMainWindow.Children.Remove(Player2);
+            if (peutSpawn)
+            {
+                Ennemi ennemi = new Ennemi(50, 200, 721, 25);
+                ennemis.Add(ennemi);
+                delaiSpawn = 0;
+                peutSpawn = false;
+
+            }
+            
         }
+
+        private void Delai()
+        {
+            delaiSpawn = delaiSpawn + 1;
+            peutSpawn = (double)(delaiSpawn / 17) >= 1;
+            
+        }
+
+
     }
 
 }
